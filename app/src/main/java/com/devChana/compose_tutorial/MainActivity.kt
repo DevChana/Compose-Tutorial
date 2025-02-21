@@ -20,7 +20,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
-import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -80,9 +81,10 @@ private fun Greetings(
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     var expanded by rememberSaveable { mutableStateOf(false) }
-
-    Surface(
-        color = MaterialTheme.colorScheme.primary,
+    Card(
+        colors = CardDefaults.cardColors(
+            contentColor = MaterialTheme.colorScheme.primary,
+        ),
         modifier = modifier.padding(horizontal = 8.dp, vertical = 4.dp),
     ) {
         Row(
